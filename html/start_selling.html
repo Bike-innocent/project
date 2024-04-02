@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="start_selling.css">
+    <script src="bootstrap.js"></script>
+</head>
+<style>
+    .find-what-to-buy {
+        font-weight: bold;
+        font-size: 17px;
+    }
+    body {
+        background-color: whitesmoke;
+        font-size: 15px;
+    }
+</style>
+<body>
+    <!-- First part, the nav and search button -->
+    <div class="navbar-1 fixed-top">
+        <a href="#">
+            <img src="logo.png" alt="">
+        </a>
+        <div class="search-bar">
+            <input type="text" placeholder="Search category" class="find-what-to-buy">
+            <button type="button" class="search">Search</button>
+        </div>
+        <div id="notification"><img src="notification.png" alt="Logo" onclick="openModal()"></div>
+        <img src="bike.png" alt="Logo" class="logo">
+    </div>
+
+    <div class="main">
+        <h5 style="margin-top: 20px;" class="category-h5">Select product category
+            <span style="color: red;font-size: 22px;"><sup>*</sup></span>
+            <br><span style="font-size: 16px;color: rgb(186, 191, 194);">(choose a category to filter your search)</span>
+        </h5>
+        <div class="flex-container2">
+            <!-- Category Images -->
+            <div class="image2">
+                <img src="category 1.png">
+                <div class="text2">Gadgets</div>
+            </div>
+            <div class="image2">
+                <img src="category 2.png">
+                <div class="text2">Vehicles</div>
+            </div>
+            <div class="image2">
+                <img src="category 3.png">
+                <div class="text2">Houses</div>
+            </div>
+            <div class="image2">
+                <img src="category 4.png">
+                <div class="text2">Fashion</div>
+            </div>
+            <div class="image2">
+                <img src="category 5.png">
+                <div class="text2">Jobs</div>
+            </div>
+            <div class="image2">
+                <img src="category 6.png">
+                <div class="text2">Cosmetics</div>
+            </div>
+            <div class="image2">
+                <img src="category 7.png">
+                <div class="text2">Fruits</div>
+            </div>
+            <div class="image2">
+                <img src="category 8.png">
+                <div class="text2">Kitchen utensils</div>
+            </div>
+        </div>
+        <!-- Category Full Size -->
+        <img src="arrow left.png" alt="" style="position: absolute;margin-top: 60px;" onclick="prevImages()" class="imagebox">
+        <img src="arrow.png" alt="" onclick="nextImages()" class="imagebox">
+        <div class="flex-container" id="imageGallery">
+            <!-- Category Images Gallery -->
+            <div class="image">
+                <img src="category 1.png">
+                <div class="text">Gadgets</div>
+            </div>
+            <div class="image">
+                <img src="category 2.png">
+                <div class="text">Vehicles</div>
+            </div>
+            <div class="image">
+                <img src="category 3.png">
+                <div class="text">Houses</div>
+            </div>
+            <div class="image">
+                <img src="category 4.png">
+                <div class="text">Fashion</div>
+            </div>
+            <div class="image">
+                <img src="category 5.png">
+                <div class="text">Jobs</div>
+            </div>
+            <div class="image">
+                <img src="category 6.png">
+                <div class="text">Cosmetics</div>
+            </div>
+            <div class="image">
+                <img src="category 7.png">
+                <div class="text">Fruits</div>
+            </div>
+            <div class="image">
+                <img src="category 8.png">
+                <div class="text">Kitchen Utensils</div>
+            </div>
+        </div>
+    </div>
+ <!-- product upload area -->
+    <div class="product_upload">
+        <div class="col first_column">
+            <p class="add_photo"><strong>Add photo</strong><br>
+                <span style="font-size: 12px;">(your first selected photo is your product Gig)</span>
+            </p>
+            <div class="photo_upload">
+                <img src="upload.png" alt="Logo" class="upload_camera">
+                <p class="photo_discribtion">maximum picture size: <span class="photo_discribtion_2">5mb</span><br>
+                    supported format: <span class="photo_discribtion_2">Jpg & Png</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="col second_column">
+            <input type="text" placeholder="location*" class="photo_inputs">
+            <div class="price_input photo_inputs">
+                <input type="text" placeholder="main price" class="main_price">
+                <div class="vertical-bar"></div>
+                <input type="text" placeholder="promo(optional)" class="promo_price">
+            </div>
+            <input type="text" placeholder="how many copies of this product do you have in stock,suitable for wholesale(Optional)" class="photo_inputs">
+            <div class="product_condition">
+                <p>
+                    product condition
+                    <button class="button used" onclick="toggleButton(this)">Fairly Used</button>
+                    <button class="button new" onclick="toggleButton(this)">New</button>
+                </p>
+            </div>
+            <div class="ask_for_price">
+                <p>Ask for price
+                    <span class="ask_for_price_span">(
+                        use ask for price label for services <br> with variable pricing based on buyer demand.)
+                    </span>
+                </p>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="negotiable">
+                <p>Negotiable
+                    <span class="ask_for_price_span">(
+                        this allows potential buyers to <br> negotiate by sending you an offer.)
+                    </span>
+                </p>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+        
+        <div class="col " style="margin-left: auto;">
+            <input type="text" placeholder="product title" class="product_title">  
+            <p class="maximum_character">500 characters max</p> 
+            <textarea  placeholder="product descriptoin" class="product_descriptoin_input"></textarea>
+            
+            <button type="submit" class="upload_your_product">
+              <p class="upload_your_product_p"><img src="logo icon.png" alt="">
+                Upload your Product  
+              </p>
+            </button>
+            <p class="upload_terms">By selecting the *Upload Your Product* option you acknowledge 
+              and agree to the Terms of Use, commit to following the Safety 
+              Tips. and verify that your submission does not cointain any 
+               Prohobited items
+            </p>
+        </div>
+    </div>
+    <script src="start_selling.js"></script>
+</body>
+</html>
